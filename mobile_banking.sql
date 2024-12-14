@@ -166,7 +166,7 @@ INNER JOIN
     users ON sessions.user_id = users.id
 WHERE 
     sessions.expired_at > CURRENT_TIMESTAMP;
---  get data notifikasi berdasarkan status dan 
+--  23. get data notifikasi berdasarkan status dan 
 SELECT 
     notifications.id AS notification_id,
     notifications.judul,
@@ -180,7 +180,7 @@ INNER JOIN
     users ON notifications.user_id = users.id
 WHERE 
     notifications.status = 'belum_dibaca';
--- get semua sesi login dengan detail pengguna dan IP
+-- 24. get semua sesi login dengan detail pengguna dan IP
 SELECT 
     sessions.id AS session_id,
     sessions.token,
@@ -192,7 +192,7 @@ FROM
     sessions
 INNER JOIN 
     users ON sessions.user_id = users.id;
--- mengambil transaksi berdasarkan tanggal dan status
+-- 25. mengambil transaksi berdasarkan tanggal dan status
 SELECT 
     transactions.id AS transaction_id,
     transactions.jenis_transaksi,
@@ -210,7 +210,7 @@ INNER JOIN
 WHERE 
     transactions.tanggal_transaksi BETWEEN '2024-01-01' AND '2024-12-31'
     AND transactions.status = 'berhasil';
--- mengambil data audit log berdasarkan periode dan perangkat 
+-- 26. mengambil data audit log berdasarkan periode dan perangkat 
 SELECT 
     audit_Logs.id AS log_id,
     audit_Logs.action,
@@ -223,7 +223,7 @@ INNER JOIN
     users ON audit_Logs.user_id = users.id
 WHERE 
     audit_Logs.created_at BETWEEN '2024-06-01' AND '2024-12-31';
--- Mengambil Informasi Kartu dan Riwayat Transaksi Terkait
+-- 27. Mengambil Informasi Kartu dan Riwayat Transaksi Terkait
 SELECT 
     cards.nomor_kartu,
     cards.jenis_kartu,
