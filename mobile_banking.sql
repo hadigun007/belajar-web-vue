@@ -1,5 +1,6 @@
 -- 1. create database
 CREATE DATABASE mobile_banking_db;
+USE mobile_banking_db;
 -- 2. create table users
 CREATE TABLE users (
     id BIGINT PRIMARY KEY,
